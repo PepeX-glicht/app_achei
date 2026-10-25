@@ -1,0 +1,84 @@
+.account-page {
+  --page-accent: var(--accent-account);
+}
+
+.account-profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.account-profile__avatar {
+  display: inline-flex;
+  flex: 0 0 3.75rem;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-brand-soft);
+  color: var(--page-accent);
+  font-size: 1.125rem;
+  font-weight: 900;
+}
+
+.account-profile__info {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 14rem;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.account-profile__info h2,
+.account-profile__info p,
+.account-profile__contact strong {
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+.account-profile__info h2 {
+  font-size: 1.25rem;
+}
+
+.account-profile__info > p:last-child,
+.account-profile__contact span {
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.account-profile__contact {
+  display: flex;
+  min-width: 0;
+  flex: 0 1 15rem;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.account-profile__contact strong {
+  font-size: 0.875rem;
+}
+
+.account-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.account-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.account-list > * {
+  flex: 1 1 18rem;
+}
+
+@media (max-width: 26rem) {
+  .account-items .home-section__heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

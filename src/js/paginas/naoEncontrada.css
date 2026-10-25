@@ -1,0 +1,22 @@
+.not-found-page {
+  --page-accent: var(--accent-not-found);
+  min-height: 55vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.not-found-page > p:not(.eyebrow) {
+  align-self: stretch;
+  margin: 0;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.not-found-art {
+  color: var(--page-accent);
+  font-size: clamp(4rem, 20vw, 9rem);
+  font-weight: 950;
+  letter-spacing: -0.1em;
+  line-height: 0.9;
+}

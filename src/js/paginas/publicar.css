@@ -1,0 +1,69 @@
+.publish-page {
+  --page-accent: var(--accent-publish);
+  align-items: flex-start;
+}
+
+.publish-form {
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: clamp(var(--space-5), 6vw, var(--space-8));
+}
+
+.publish-form__intro {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-radius: var(--radius-small);
+  padding: var(--space-4);
+  background: var(--color-brand-soft);
+}
+
+.publish-form__intro > span {
+  display: inline-flex;
+  flex: 0 0 2.5rem;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--page-accent);
+  color: var(--color-surface);
+  font-size: 1.5rem;
+}
+
+.publish-form__intro p {
+  margin: var(--space-1) 0 0;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.publish-form__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.publish-form__row > * {
+  flex: 1 1 13rem;
+}
+
+.publish-form > .button {
+  align-self: flex-start;
+}
+
+.publish-form__account {
+  margin: calc(var(--space-4) * -1) 0 0;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.publish-error:not([hidden]) {
+  display: block;
+}
+
+@media (max-width: 24rem) {
+  .publish-form > .button {
+    align-self: stretch;
+  }
+}

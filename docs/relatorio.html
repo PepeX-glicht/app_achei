@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório — Achei!</title>
+    <style>
+      :root {
+        --green: #176b52;
+        --ink: #20302a;
+        --muted: #5e6c65;
+        --line: #d8e0d9;
+        --paper: #ffffff;
+        --soft: #eef4ef;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #e9ece8;
+        color: var(--ink);
+        font: 10pt/1.38 Arial, Helvetica, sans-serif;
+      }
+      .report-page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10mm auto;
+        padding: 15mm 16mm 14mm;
+        background: var(--paper);
+        page-break-after: always;
+      }
+      .report-page:last-child { page-break-after: auto; }
+      .report-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8mm;
+        margin-bottom: 7mm;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 4mm;
+      }
+      .brand {
+        color: var(--green);
+        font-size: 17pt;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      .report-header small,
+      .muted { color: var(--muted); }
+      h1 { margin: 0 0 3mm; font-size: 23pt; line-height: 1.08; }
+      h2 { margin: 0 0 2.5mm; color: var(--green); font-size: 13pt; }
+      h3 { margin: 0 0 1mm; font-size: 10pt; }
+      p { margin: 0 0 2.5mm; }
+      section { margin: 0 0 5mm; }
+      .question {
+        margin: 3mm 0 4mm;
+        border-left: 3px solid var(--green);
+        padding: 2.5mm 4mm;
+        background: var(--soft);
+        font-size: 12pt;
+        font-weight: 700;
+      }
+      .situations {
+        display: flex;
+        gap: 3mm;
+      }
+      .situation {
+        flex: 1 1 0;
+        border: 1px solid var(--line);
+        border-radius: 3mm;
+        padding: 3mm;
+      }
+      .situation p { margin: 0; font-size: 8.5pt; }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 8.2pt;
+      }
+      th, td {
+        border: 1px solid var(--line);
+        padding: 1.6mm 2mm;
+        text-align: left;
+        vertical-align: top;
+      }
+      th { background: var(--soft); }
+      .tree {
+        margin: 1mm 0 2mm;
+        border-radius: 2mm;
+        padding: 3mm;
+        background: #f4f6f3;
+        color: var(--ink);
+        font: 7.6pt/1.35 Consolas, "Courier New", monospace;
+        white-space: pre-wrap;
+      }
+      .file-notes {
+        columns: 2;
+        column-gap: 7mm;
+        margin: 0;
+        padding-left: 4mm;
+        font-size: 8pt;
+      }
+      .file-notes li { break-inside: avoid; margin-bottom: 1.5mm; }
+      .decisions {
+        display: flex;
+        flex-direction: column;
+        gap: 2mm;
+      }
+      .decision {
+        border-left: 2px solid var(--green);
+        padding: 1mm 0 1mm 3mm;
+      }
+      .decision p { margin: 0; font-size: 8.5pt; }
+      .pending {
+        color: #753e0b;
+        font-weight: 700;
+      }
+      .difficulty {
+        margin: 2mm 0;
+        border: 1px solid var(--line);
+        border-radius: 2mm;
+        padding: 3mm;
+      }
+      .difficulty p { margin: 0.6mm 0; font-size: 8.4pt; }
+      .shots-page h1 { margin-bottom: 2mm; }
+      .shots-note { margin-bottom: 4mm; color: var(--muted); font-size: 8pt; }
+      .shot-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5mm 6mm;
+      }
+      figure {
+        display: flex;
+        flex: 1 1 calc(50% - 6mm);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5mm;
+        min-width: 0;
+        margin: 0;
+      }
+      figure img {
+        display: block;
+        height: 103mm;
+        max-width: 100%;
+        object-fit: contain;
+        border: 0.3mm solid var(--line);
+        background: #f5f3ed;
+      }
+      figcaption { color: var(--ink); font-size: 8pt; font-weight: 700; }
+      .page-number {
+        margin-top: 4mm;
+        color: var(--muted);
+        font-size: 7.5pt;
+        text-align: right;
+      }
+      @page { size: A4; margin: 0; }
+      @media print {
+        body { background: white; }
+        .report-page {
+          width: 210mm;
+          height: 297mm;
+          min-height: 0;
+          margin: 0;
+          overflow: hidden;
+          padding: 13mm 15mm 12mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="report-page">
+      <header class="report-header">
+        <span class="brand">Achei!</span>
+        <small>Desafio 1 · O mesmo esqueleto, outro negócio</small>
+      </header>
+      <h1>Relatório de desenvolvimento</h1>
+      <p class="muted">Tema: achados e perdidos · Aplicação web com dados mockados · Protótipo acadêmico</p>
+
+      <section>
+        <h2>R1 — O problema e quem usa</h2>
+        <p>Objetos perdidos no campus podem ficar sem destino porque avisos se espalham por conversas e publicações que desaparecem. O Achei! reúne os registros em um só lugar e destaca situação, data, localização e pessoa publicadora.</p>
+        <div class="question">Pergunta principal: onde e quando este objeto foi visto, e com quem posso combinar a devolução?</div>
+        <div class="situations">
+          <div class="situation"><h3>1. Procurar</h3><p>Uma estudante perde a garrafa após a aula, busca pelo objeto ou pelo bloco e confere os avisos mais recentes.</p></div>
+          <div class="situation"><h3>2. Devolver</h3><p>Alguém encontra um chaveiro, registra o local e a data e orienta a retirada na recepção.</p></div>
+          <div class="situation"><h3>3. Confirmar</h3><p>Uma pessoa vê um anúncio de caderno, abre os detalhes e combina a devolução sem publicar informações sensíveis.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>R2 — Mapa de equivalência</h2>
+        <table>
+          <thead><tr><th>Conceito do KiOferta</th><th>Equivalência no Achei!</th></tr></thead>
+          <tbody>
+            <tr><td>Produto</td><td>Objeto procurado ou encontrado: chave, documento, eletrônico ou material escolar.</td></tr>
+            <tr><td>Oferta</td><td>Aviso publicado com situação, descrição, local e data.</td></tr>
+            <tr><td>Mercado</td><td>Local onde o objeto foi visto ou está guardado: sala, bloco, biblioteca ou portaria.</td></tr>
+            <tr><td>Preço</td><td>Não se aplica: não há venda. A situação (perdido/encontrado) orienta a decisão.</td></tr>
+            <tr><td>Distância</td><td>Proximidade inferida pelo local e pela data; não há GPS nem cálculo de distância.</td></tr>
+            <tr><td>Contribuinte</td><td>Pessoa publicadora identificada por uma conta fixa e simulada.</td></tr>
+            <tr><td>Visitante</td><td>Pessoa que pesquisa e consulta os avisos sem cadastro.</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <div class="page-number">1 / 5</div>
+    </article>
+
+    <article class="report-page">
+      <header class="report-header"><span class="brand">Achei!</span><small>Estrutura e decisões</small></header>
+      <section>
+        <h2>R3 — Estrutura</h2>
+        <pre class="tree">src/
+├── index.html
+├── css/ (tokens.css, base.css, style.css)
+└── js/
+    ├── main.js, main.css, utils.js
+    ├── rotas/rotas.js
+    ├── navbar/navbar.js, navbar.css
+    ├── dadosMockados/itens.js, usuarios.js
+    └── paginas/ (inicio, resultados, detalhe,
+        publicar, conta, naoEncontrada, itemCard)
+            └── cada tela/componente tem CSS próprio
+docs/relatorio.html, docs/relatorio.pdf, docs/capturas/</pre>
+        <ul class="file-notes">
+          <li><b>index.html:</b> ponto de entrada, menu e contêiner #app.</li>
+          <li><b>tokens.css:</b> cores, espaçamentos e medidas compartilhadas.</li>
+          <li><b>base.css / style.css:</b> reset, regras globais e importação dos estilos.</li>
+          <li><b>main.js:</b> interpreta hash/consulta e renderiza a rota após navegação.</li>
+          <li><b>rotas.js:</b> catálogo único das seis telas.</li>
+          <li><b>navbar.js:</b> cria os links a partir do catálogo de rotas.</li>
+          <li><b>dadosMockados:</b> 12 avisos, quatro usuários e quatro publicadores.</li>
+          <li><b>paginas:</b> renderização e CSS separados por tela/componente.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>R4 — Três decisões e um descartado</h2>
+        <div class="decisions">
+          <div class="decision"><h3>1. Local e data antes de qualquer contato</h3><p>São os sinais que ajudam a decidir se o aviso pode corresponder ao objeto. A busca também considera categoria e situação.</p></div>
+          <div class="decision"><h3>2. Conta fixa e dados em memória</h3><p>O protótipo segue a restrição de não usar autenticação, backend ou banco; publicar demonstra o fluxo sem prometer persistência.</p></div>
+          <div class="decision"><h3>3. Hash com filtros na URL</h3><p>Os parâmetros permitem compartilhar/recarregar uma busca, e `hashchange` mantém as seis telas no padrão didático do projeto de referência.</p></div>
+          <div class="decision"><h3>Alternativa descartada: mapa/GPS</h3><p>Seria necessário obter localização, permissão e possivelmente serviço externo; a localização textual é mais simples e compatível com os dados mockados.</p></div>
+        </div>
+      </section>
+      <div class="page-number">2 / 5</div>
+    </article>
+
+    <article class="report-page">
+      <header class="report-header"><span class="brand">Achei!</span><small>Equipe e aprendizados</small></header>
+      <section>
+        <h2>R5 — Divisão de tarefas</h2>
+        <p>Distribuição sugerida a partir das frentes do enunciado; confirmar que corresponde ao trabalho efetivamente feito por cada pessoa antes da entrega.</p>
+        <table>
+          <thead><tr><th>Integrante</th><th>Responsabilidade / entrega prevista</th><th>Commit próprio</th></tr></thead>
+          <tbody>
+            <tr><td>Pedro Henrique</td><td>Desenvolvimento do relatório e das rotas do código.</td><td class="pending">Ainda sem commits</td></tr>
+            <tr><td>Daniel Silva Marques</td><td>Apoio no desenvolvimento do CSS de todas as páginas.</td><td class="pending">Ainda sem commits</td></tr>
+            <tr><td>Leonardo Severo</td><td>Desenvolvimento de index.html e das lógicas JavaScript dentro de src/.</td><td class="pending">Ainda sem commits</td></tr>
+          </tbody>
+        </table>
+        <p class="muted">O grupo informou que ainda não tem commits. Após criá-los, atualizem esta tabela com os hashes reais e verifiquem se o histórico corresponde às responsabilidades listadas.</p>
+      </section>
+
+      <section>
+        <h2>R6 — Duas dificuldades reais</h2>
+        <div class="difficulty">
+          <h3>1. A confirmar pelo grupo</h3>
+          <p>O grupo informou que ainda não sabe qual dificuldade relatar.</p>
+          <p><b>Qual erro apareceu?</b> Não informado. <b>Qual foi a suspeita inicial?</b> Não informada. <b>Qual era a causa verdadeira?</b> Não informada.</p>
+          <p>Preencham com um problema técnico que realmente aconteceu durante o desenvolvimento.</p>
+        </div>
+        <div class="difficulty">
+          <h3>2. A confirmar pelo grupo</h3>
+          <p>O grupo informou que ainda não sabe qual segunda dificuldade relatar.</p>
+          <p><b>Qual erro apareceu?</b> Não informado. <b>Qual foi a suspeita inicial?</b> Não informada. <b>Qual era a causa verdadeira?</b> Não informada.</p>
+          <p>Descrevam outra dificuldade real; não reutilizem uma limitação prevista pelo enunciado como se fosse um erro.</p>
+        </div>
+        <p class="pending">Esta seção permanece incompleta até o grupo registrar duas dificuldades reais, incluindo o erro observado, a suspeita inicial e a causa verdadeira.</p>
+      </section>
+      <div class="page-number">3 / 5</div>
+    </article>
+
+    <article class="report-page shots-page">
+      <header class="report-header"><span class="brand">Achei!</span><small>Limites e capturas · viewport de 360 px</small></header>
+      <section>
+        <h2>R7 — O que ficou de fora</h2>
+        <p>Não foram implementados backend, banco de dados, login/cadastro real, persistência após F5, GPS/mapa, mensagens entre usuários, moderação ou upload de fotos. O escopo exige dados mockados, não autentica e não precisa salvar alterações; mapa e mensagens também ampliariam o projeto além das telas pedidas. Os contatos exibidos são fictícios.</p>
+      </section>
+      <h1>Capturas das telas (360 px)</h1>
+      <p class="shots-note">Capturas do protótipo em viewport de 360 px de largura. Os registros são demonstrativos.</p>
+      <div class="shot-grid">
+        <figure><img src="./capturas/inicio.png" alt="Tela inicial do Achei!" /><figcaption>1. Início</figcaption></figure>
+        <figure><img src="./capturas/resultados.png" alt="Tela de resultados do Achei!" /><figcaption>2. Resultados</figcaption></figure>
+        <figure><img src="./capturas/detalhe.png" alt="Tela de detalhe de um aviso" /><figcaption>3. Detalhe</figcaption></figure>
+        <figure><img src="./capturas/publicar.png" alt="Formulário de publicação" /><figcaption>4. Publicar</figcaption></figure>
+      </div>
+      <div class="page-number">4 / 5</div>
+    </article>
+
+    <article class="report-page shots-page">
+      <header class="report-header"><span class="brand">Achei!</span><small>Capturas em viewport de 360 px</small></header>
+      <div class="shot-grid">
+        <figure><img src="./capturas/conta.png" alt="Tela Minha conta" /><figcaption>5. Minha conta</figcaption></figure>
+        <figure><img src="./capturas/nao-encontrada.png" alt="Tela de rota inexistente" /><figcaption>6. Rota inexistente</figcaption></figure>
+        <figure><img src="./capturas/busca-vazia.png" alt="Estado vazio de busca" /><figcaption>Busca sem resultados</figcaption></figure>
+        <figure><img src="./capturas/resultados-filtrados.png" alt="Resultados com filtros" /><figcaption>Busca + filtro por situação</figcaption></figure>
+      </div>
+      <p class="muted">A busca combina termo, categoria e situação sem recarregar a página inteira. A rota inexistente e o estado sem resultados oferecem caminhos de retorno.</p>
+      <div class="page-number">5 / 5</div>
+    </article>
+  </body>
+</html>

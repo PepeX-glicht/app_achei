@@ -1,0 +1,36 @@
+:root {
+  color-scheme: light;
+  --color-paper: #f5f3ed;
+  --color-surface: #ffffff;
+  --color-ink: #1f2c29;
+  --color-muted: #68736f;
+  --color-line: #dce2dc;
+  --color-soft: #e8eee8;
+  --color-brand: #176b52;
+  --color-brand-dark: #104d3d;
+  --color-brand-soft: #d9eee5;
+  --color-warning: #8a4e16;
+  --color-warning-soft: #fff1d8;
+  --color-danger: #9a3838;
+  --color-danger-soft: #fbe8e6;
+  --color-focus: #e3a52b;
+  --color-shadow: rgb(31 44 41 / 8%);
+  --accent-home: var(--color-brand);
+  --accent-results: var(--color-brand);
+  --accent-detail: var(--color-brand);
+  --accent-publish: var(--color-brand);
+  --accent-account: var(--color-brand);
+  --accent-not-found: var(--color-brand);
+  --space-1: 0.375rem;
+  --space-2: 0.625rem;
+  --space-3: 0.875rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --radius-small: 0.75rem;
+  --radius-medium: 1.125rem;
+  --radius-large: 1.75rem;
+  --content-width: 72rem;
+}
