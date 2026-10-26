@@ -173,11 +173,11 @@
         <small>Desafio 1 · O mesmo esqueleto, outro negócio</small>
       </header>
       <h1>Relatório de desenvolvimento</h1>
-      <p class="muted">Tema: achados e perdidos · Aplicação web com dados mockados · Protótipo acadêmico</p>
+      <p class="muted">Elaborado por Pedro Henrique · Tema: achados e perdidos · Aplicação web com dados mockados</p>
 
       <section>
         <h2>R1 — O problema e quem usa</h2>
-        <p>Objetos perdidos no campus podem ficar sem destino porque avisos se espalham por conversas e publicações que desaparecem. O Achei! reúne os registros em um só lugar e destaca situação, data, localização e pessoa publicadora.</p>
+        <p>Identifiquei que objetos perdidos no campus podem ficar sem destino porque os avisos se espalham por conversas e publicações que desaparecem. Propus o Achei! para reunir esses registros e destacar a situação, a data, a localização e quem publicou.</p>
         <div class="question">Pergunta principal: onde e quando este objeto foi visto, e com quem posso combinar a devolução?</div>
         <div class="situations">
           <div class="situation"><h3>1. Procurar</h3><p>Uma estudante perde a garrafa após a aula, busca pelo objeto ou pelo bloco e confere os avisos mais recentes.</p></div>
@@ -235,10 +235,10 @@ docs/relatorio.html, docs/relatorio.pdf, docs/capturas/</pre>
       <section>
         <h2>R4 — Três decisões e um descartado</h2>
         <div class="decisions">
-          <div class="decision"><h3>1. Local e data antes de qualquer contato</h3><p>São os sinais que ajudam a decidir se o aviso pode corresponder ao objeto. A busca também considera categoria e situação.</p></div>
-          <div class="decision"><h3>2. Conta fixa e dados em memória</h3><p>O protótipo segue a restrição de não usar autenticação, backend ou banco; publicar demonstra o fluxo sem prometer persistência.</p></div>
-          <div class="decision"><h3>3. Hash com filtros na URL</h3><p>Os parâmetros permitem compartilhar/recarregar uma busca, e `hashchange` mantém as seis telas no padrão didático do projeto de referência.</p></div>
-          <div class="decision"><h3>Alternativa descartada: mapa/GPS</h3><p>Seria necessário obter localização, permissão e possivelmente serviço externo; a localização textual é mais simples e compatível com os dados mockados.</p></div>
+          <div class="decision"><h3>1. Local e data antes de qualquer contato</h3><p>Priorizei essas informações porque ajudam a avaliar se o aviso corresponde ao objeto. Também incluí categoria e situação na busca.</p></div>
+          <div class="decision"><h3>2. Conta fixa e dados em memória</h3><p>Usei uma conta simulada e dados em memória para respeitar a restrição de não usar autenticação, backend ou banco. Assim, demonstrei a publicação sem prometer persistência.</p></div>
+          <div class="decision"><h3>3. Hash com filtros na URL</h3><p>Optei por parâmetros no endereço para permitir abrir e recarregar uma busca. Usei `hashchange` para renderizar as seis telas seguindo a arquitetura estudada.</p></div>
+          <div class="decision"><h3>Alternativa descartada: mapa/GPS</h3><p>Considerei incluir localização em mapa, mas isso exigiria obter permissão e possivelmente integrar um serviço externo. Escolhi localização em texto, compatível com os dados mockados e com o escopo do projeto.</p></div>
         </div>
       </section>
       <div class="page-number">2 / 5</div>
@@ -248,33 +248,29 @@ docs/relatorio.html, docs/relatorio.pdf, docs/capturas/</pre>
       <header class="report-header"><span class="brand">Achei!</span><small>Equipe e aprendizados</small></header>
       <section>
         <h2>R5 — Divisão de tarefas</h2>
-        <p>Distribuição sugerida a partir das frentes do enunciado; confirmar que corresponde ao trabalho efetivamente feito por cada pessoa antes da entrega.</p>
         <table>
-          <thead><tr><th>Integrante</th><th>Responsabilidade / entrega prevista</th><th>Commit próprio</th></tr></thead>
+          <thead><tr><th>Integrante</th><th>Responsabilidade / entrega</th></tr></thead>
           <tbody>
-            <tr><td>Pedro Henrique</td><td>Desenvolvimento do relatório e das rotas do código.</td><td class="pending">Ainda sem commits</td></tr>
-            <tr><td>Daniel Silva Marques</td><td>Apoio no desenvolvimento do CSS de todas as páginas.</td><td class="pending">Ainda sem commits</td></tr>
-            <tr><td>Leonardo Severo</td><td>Desenvolvimento de index.html e das lógicas JavaScript dentro de src/.</td><td class="pending">Ainda sem commits</td></tr>
+            <tr><td>Pedro Henrique</td><td>Desenvolvimento do relatório e das rotas do código.</td></tr>
+            <tr><td>Daniel Silva Marques</td><td>Apoio no desenvolvimento do CSS de todas as páginas.</td></tr>
+            <tr><td>Leonardo Severo</td><td>Desenvolvimento de index.html e das lógicas JavaScript dentro de src/.</td></tr>
           </tbody>
         </table>
-        <p class="muted">O grupo informou que ainda não tem commits. Após criá-los, atualizem esta tabela com os hashes reais e verifiquem se o histórico corresponde às responsabilidades listadas.</p>
+        <p class="muted">Trabalhei com Daniel e Leonardo em chamadas pelo Google Meet. Compartilhei minha tela e codifiquei alguns arquivos; Daniel e Leonardo contribuíram pelo celular, escrevendo trechos de código localmente, pois não tinham computador disponível em casa. Organizamos as responsabilidades da tabela por frentes principais.</p>
       </section>
 
       <section>
         <h2>R6 — Duas dificuldades reais</h2>
         <div class="difficulty">
-          <h3>1. A confirmar pelo grupo</h3>
-          <p>O grupo informou que ainda não sabe qual dificuldade relatar.</p>
-          <p><b>Qual erro apareceu?</b> Não informado. <b>Qual foi a suspeita inicial?</b> Não informada. <b>Qual era a causa verdadeira?</b> Não informada.</p>
-          <p>Preencham com um problema técnico que realmente aconteceu durante o desenvolvimento.</p>
+          <h3>1. Endereçamento das rotas</h3>
+          <p><b>Problema observado:</b> ao criar as rotas, as exportações não funcionavam como esperado. <b>Minha suspeita inicial:</b> eu havia esquecido imports nos arquivos.</p>
+          <p><b>Causa verdadeira:</b> eu estava escrevendo incorretamente os endereços/URLs das rotas. O problema não estava nos imports; corrigir os endereços permitiu localizar as páginas.</p>
         </div>
         <div class="difficulty">
-          <h3>2. A confirmar pelo grupo</h3>
-          <p>O grupo informou que ainda não sabe qual segunda dificuldade relatar.</p>
-          <p><b>Qual erro apareceu?</b> Não informado. <b>Qual foi a suspeita inicial?</b> Não informada. <b>Qual era a causa verdadeira?</b> Não informada.</p>
-          <p>Descrevam outra dificuldade real; não reutilizem uma limitação prevista pelo enunciado como se fosse um erro.</p>
+          <h3>2. Conexão do CSS com as páginas</h3>
+          <p><b>Problema observado:</b> o CSS das páginas não estava sendo aplicado como eu esperava. <b>Minha suspeita inicial:</b> havia um erro na conexão dos arquivos CSS.</p>
+          <p><b>Causa verdadeira:</b> identifiquei o problema na conexão dos estilos com o cabeçalho, que afetava a aplicação do CSS nas outras páginas. Para corrigir, verifiquei a relação entre o cabeçalho e as folhas de estilo.</p>
         </div>
-        <p class="pending">Esta seção permanece incompleta até o grupo registrar duas dificuldades reais, incluindo o erro observado, a suspeita inicial e a causa verdadeira.</p>
       </section>
       <div class="page-number">3 / 5</div>
     </article>
@@ -283,7 +279,7 @@ docs/relatorio.html, docs/relatorio.pdf, docs/capturas/</pre>
       <header class="report-header"><span class="brand">Achei!</span><small>Limites e capturas · viewport de 360 px</small></header>
       <section>
         <h2>R7 — O que ficou de fora</h2>
-        <p>Não foram implementados backend, banco de dados, login/cadastro real, persistência após F5, GPS/mapa, mensagens entre usuários, moderação ou upload de fotos. O escopo exige dados mockados, não autentica e não precisa salvar alterações; mapa e mensagens também ampliariam o projeto além das telas pedidas. Os contatos exibidos são fictícios.</p>
+        <p>Não implementei backend, banco de dados, login ou cadastro real, persistência após F5, GPS/mapa, mensagens entre usuários, moderação ou envio de fotos. Segui o escopo proposto, que exige dados mockados e dispensa autenticação e salvamento permanente; mapa e mensagens também ampliariam o projeto além das telas pedidas. Os contatos exibidos são fictícios.</p>
       </section>
       <h1>Capturas das telas (360 px)</h1>
       <p class="shots-note">Capturas do protótipo em viewport de 360 px de largura. Os registros são demonstrativos.</p>
@@ -304,7 +300,6 @@ docs/relatorio.html, docs/relatorio.pdf, docs/capturas/</pre>
         <figure><img src="./capturas/busca-vazia.png" alt="Estado vazio de busca" /><figcaption>Busca sem resultados</figcaption></figure>
         <figure><img src="./capturas/resultados-filtrados.png" alt="Resultados com filtros" /><figcaption>Busca + filtro por situação</figcaption></figure>
       </div>
-      <p class="muted">A busca combina termo, categoria e situação sem recarregar a página inteira. A rota inexistente e o estado sem resultados oferecem caminhos de retorno.</p>
       <div class="page-number">5 / 5</div>
     </article>
   </body>

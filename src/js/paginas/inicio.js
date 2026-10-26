@@ -31,7 +31,7 @@ export const paginaInicio = (app) => {
         </div>
         <div class="home-hero__illustration" aria-hidden="true">
           <span class="home-illustration__spark home-illustration__spark--one">✦</span>
-          <span class="home-illustration__circle">a!</span>
+          <span class="home-illustration__circle">Achei!</span>
           <span class="home-illustration__spark home-illustration__spark--two">✳</span>
           <span class="home-illustration__caption">um encontro<br />pode mudar o dia</span>
         </div>

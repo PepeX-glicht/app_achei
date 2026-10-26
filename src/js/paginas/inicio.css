@@ -99,7 +99,7 @@
 
 .home-illustration__circle {
   display: inline-flex;
-  flex: 0 0 10rem;
+  flex: 0 0 12rem;
   aspect-ratio: 1;
   align-items: center;
   justify-content: center;
@@ -107,9 +107,9 @@
   border-radius: 50%;
   background: var(--color-brand);
   color: var(--color-surface);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.06em;
   box-shadow: 0 1rem 2rem var(--color-shadow);
 }
 

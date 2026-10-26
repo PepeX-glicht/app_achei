@@ -26,22 +26,6 @@
   letter-spacing: -0.05em;
 }
 
-.navbar__brand > span:last-child > span {
-  color: var(--color-brand);
-}
-
-.navbar__mark {
-  display: inline-flex;
-  flex: 0 0 2.25rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.75rem;
-  background: var(--color-brand);
-  color: var(--color-surface);
-  font-size: 0.875rem;
-  letter-spacing: -0.08em;
-}
-
 .navbar__links {
   display: flex;
   min-width: 0;

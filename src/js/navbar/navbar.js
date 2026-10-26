@@ -16,8 +16,7 @@ export function renderNavbar(rotas) {
   navbar.innerHTML = `
     <div class="navbar__inner">
       <a class="navbar__brand" href="#/inicio" aria-label="Achei! — início">
-        <span class="navbar__mark" aria-hidden="true">a!</span>
-        <span>Achei<span>!</span></span>
+        <span>Achei!</span>
       </a>
       <nav class="navbar__links" aria-label="Navegação principal">${links}</nav>
     </div>
